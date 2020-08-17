@@ -10,9 +10,9 @@ public class CreateAccountTest extends BaseTest {
     public void successfulCreateAnAccount() throws InterruptedException {
         homePage.clickSignInButton();
         authenticationPage.checkIfAuthenticationPage();
-        authenticationPage.insertIntoRegisterEmail("valid_email3@email.com");
+        authenticationPage.insertIntoRegisterEmail("valid_email2@email.com");
         authenticationPage.clickCreateAnAccountButton();
-        Thread.sleep(2000);
+        Thread.sleep(4000);
         registerPage.checkIfRegisterPage();
         registerPage.setTitleMr();
         registerPage.insertIntoCustomerFirstName("John");
@@ -44,7 +44,7 @@ public class CreateAccountTest extends BaseTest {
         authenticationPage.checkIfAuthenticationPage();
         authenticationPage.insertIntoRegisterEmail("valid_email2@email.com");
         authenticationPage.clickCreateAnAccountButton();
-        Thread.sleep(2000);
+        Thread.sleep(3000);
         authenticationPage.checkErrorMessageCreate("An account using this email address has already been registered. Please enter a valid password or request a new one.");
     }
 
@@ -54,7 +54,16 @@ public class CreateAccountTest extends BaseTest {
         authenticationPage.checkIfAuthenticationPage();
         authenticationPage.insertIntoRegisterEmail("valid_email2@emailcom");
         authenticationPage.clickCreateAnAccountButton();
-        Thread.sleep(2000);
+        Thread.sleep(3000);
+        authenticationPage.checkErrorMessageCreate("Invalid email address.");
+    }
+
+    @Test
+    public void unsuccessfulCreateAccountBlankEmail() throws InterruptedException {
+        homePage.clickSignInButton();
+        authenticationPage.checkIfAuthenticationPage();
+        authenticationPage.clickCreateAnAccountButton();
+        Thread.sleep(3000);
         authenticationPage.checkErrorMessageCreate("Invalid email address.");
     }
 
@@ -64,7 +73,7 @@ public class CreateAccountTest extends BaseTest {
         authenticationPage.checkIfAuthenticationPage();
         authenticationPage.insertIntoRegisterEmail("valid_email3@email.com");
         authenticationPage.clickCreateAnAccountButton();
-        Thread.sleep(2000);
+        Thread.sleep(3000);
         registerPage.checkIfRegisterPage();
         registerPage.setTitleMr();
         registerPage.insertIntoCustomerFirstName("John");
@@ -96,7 +105,7 @@ public class CreateAccountTest extends BaseTest {
         authenticationPage.checkIfAuthenticationPage();
         authenticationPage.insertIntoRegisterEmail("valid_email3@email.com");
         authenticationPage.clickCreateAnAccountButton();
-        Thread.sleep(2000);
+        Thread.sleep(3000);
         registerPage.checkIfRegisterPage();
         registerPage.setTitleMr();
         registerPage.insertIntoCustomerFirstName("John");
@@ -123,12 +132,44 @@ public class CreateAccountTest extends BaseTest {
     }
 
     @Test
+    public void unsuccessfulCreateAccountBlankEmailInCreateAccountPage() throws InterruptedException {
+        homePage.clickSignInButton();
+        authenticationPage.checkIfAuthenticationPage();
+        authenticationPage.insertIntoRegisterEmail("valid_email3@email.com");
+        authenticationPage.clickCreateAnAccountButton();
+        Thread.sleep(3000);
+        registerPage.checkIfRegisterPage();
+        registerPage.setTitleMr();
+        registerPage.insertIntoCustomerFirstName("John");
+        registerPage.insertIntoCustomerLastName("Mazare");
+        registerPage.insertIntoEmail("");
+        registerPage.insertIntoPasswd("parola123");
+        registerPage.selectDay("1");
+        registerPage.selectMonth("2");
+        registerPage.selectYear("1987");
+        registerPage.selectNewsletter();
+        registerPage.selectOptin();
+        registerPage.insertIntoAddressCompany("Cherestea");
+        registerPage.insertIntoAddressAddress1("Nice Street, 1234");
+        registerPage.insertIntoAddressCity("Florida");
+        registerPage.selectState("Florida");
+        registerPage.insertIntoAddressZipcode("12345");
+        registerPage.selectCountry("United States");
+        registerPage.insertIntoAddressOther("A durat ceva");
+        registerPage.insertIntoAddressHomePhone("0712345678");
+        registerPage.insertIntoAddressMobilePhone("0787654321");
+        registerPage.insertIntoAddressAlias("My fucking address");
+        registerPage.clickSubmitAccountButton();
+        registerPage.checkErrorMessageCreateAccount("There is 1 error\nemail is required.");
+    }
+
+    @Test
     public void unsuccessfulCreateAccountDoesntFillTheRequiredFields() throws InterruptedException {
         homePage.clickSignInButton();
         authenticationPage.checkIfAuthenticationPage();
         authenticationPage.insertIntoRegisterEmail("valid_email3@email.com");
         authenticationPage.clickCreateAnAccountButton();
-        Thread.sleep(2000);
+        Thread.sleep(3000);
         registerPage.checkIfRegisterPage();
         registerPage.setTitleMr();
         registerPage.insertIntoCustomerFirstName("John");
@@ -161,7 +202,7 @@ public class CreateAccountTest extends BaseTest {
         authenticationPage.checkIfAuthenticationPage();
         authenticationPage.insertIntoRegisterEmail("valid_email3@email.com");
         authenticationPage.clickCreateAnAccountButton();
-        Thread.sleep(2000);
+        Thread.sleep(3000);
         registerPage.checkIfRegisterPage();
         registerPage.setTitleMr();
         registerPage.insertIntoCustomerFirstName("John");
@@ -193,7 +234,7 @@ public class CreateAccountTest extends BaseTest {
         authenticationPage.checkIfAuthenticationPage();
         authenticationPage.insertIntoRegisterEmail("valid_email3@email.com");
         authenticationPage.clickCreateAnAccountButton();
-        Thread.sleep(2000);
+        Thread.sleep(3000);
         registerPage.checkIfRegisterPage();
         registerPage.setTitleMr();
         registerPage.insertIntoCustomerFirstName("John");
@@ -225,7 +266,7 @@ public class CreateAccountTest extends BaseTest {
         authenticationPage.checkIfAuthenticationPage();
         authenticationPage.insertIntoRegisterEmail("valid_email3@email.com");
         authenticationPage.clickCreateAnAccountButton();
-        Thread.sleep(2000);
+        Thread.sleep(3000);
         registerPage.checkIfRegisterPage();
         registerPage.setTitleMr();
         registerPage.insertIntoCustomerFirstName("John1");
@@ -257,7 +298,7 @@ public class CreateAccountTest extends BaseTest {
         authenticationPage.checkIfAuthenticationPage();
         authenticationPage.insertIntoRegisterEmail("valid_email3@email.com");
         authenticationPage.clickCreateAnAccountButton();
-        Thread.sleep(2000);
+        Thread.sleep(3000);
         registerPage.checkIfRegisterPage();
         registerPage.setTitleMr();
         registerPage.insertIntoCustomerFirstName("John");
@@ -288,7 +329,7 @@ public class CreateAccountTest extends BaseTest {
         authenticationPage.checkIfAuthenticationPage();
         authenticationPage.insertIntoRegisterEmail("valid_email3@email.com");
         authenticationPage.clickCreateAnAccountButton();
-        Thread.sleep(2000);
+        Thread.sleep(3000);
         registerPage.checkIfRegisterPage();
         registerPage.setTitleMr();
         registerPage.insertIntoCustomerFirstName("John");
@@ -320,7 +361,7 @@ public class CreateAccountTest extends BaseTest {
         authenticationPage.checkIfAuthenticationPage();
         authenticationPage.insertIntoRegisterEmail("valid_email3@email.com");
         authenticationPage.clickCreateAnAccountButton();
-        Thread.sleep(2000);
+        Thread.sleep(3000);
         registerPage.checkIfRegisterPage();
         registerPage.setTitleMr();
         registerPage.insertIntoCustomerFirstName("John");
@@ -352,7 +393,7 @@ public class CreateAccountTest extends BaseTest {
         authenticationPage.checkIfAuthenticationPage();
         authenticationPage.insertIntoRegisterEmail("valid_email3@email.com");
         authenticationPage.clickCreateAnAccountButton();
-        Thread.sleep(2000);
+        Thread.sleep(3000);
         registerPage.checkIfRegisterPage();
         registerPage.setTitleMr();
         registerPage.insertIntoCustomerFirstName("John");

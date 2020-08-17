@@ -8,10 +8,10 @@ public class LoginTest extends BaseTest {
         homePage.clickSignInButton();
         authenticationPage.checkIfAuthenticationPage();
         authenticationPage.insertIntoLoginEmail("tapucovidiu@gmail.com");
-        authenticationPage.insertIntoLoginPasswd("wwyHVsMUv256iht");
+        authenticationPage.insertIntoLoginPasswd("parola123");
         authenticationPage.clickLoginButton();
         myAccountPage.checkIfMyAccountPage();
-        myAccountPage.checkUser("Tapuc Ovidiu");
+        myAccountPage.checkUser("John Mazare");
     }
 
     @Test

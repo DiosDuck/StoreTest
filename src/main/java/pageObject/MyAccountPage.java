@@ -27,5 +27,19 @@ public class MyAccountPage {
         Assert.assertEquals(expectedText, accountButton.getText());
     }
 
-
+    @FindBy(xpath = "//*[@class='icon-home']")
+    private WebElement homeButton;
+    public void clickHomeButton(){
+        homeButton.click();
+    }
+    @FindBy(xpath = "//*[@class='icon-building']")
+    private WebElement myAddressButton;
+    public void clickMyAddressButton(){
+        myAddressButton.click();
+    }
+    @FindBy(xpath = "//*[@class='icon-list-ol']")
+    private WebElement orderHistoryButton;
+    public void clickOrderHistoryButton(){
+        orderHistoryButton.click();
+    }
 }
